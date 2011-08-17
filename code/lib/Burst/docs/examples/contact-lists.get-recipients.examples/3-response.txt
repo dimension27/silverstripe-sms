@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.get-recipients</method>
+	<total>3</total>
+	<time>2009-07-28 01:12:18 GMT</time>
+	<timestamp>1248743538 GMT</timestamp>
+	<dataset>
+		<data>
+			<mobile>61406614352</mobile>
+			<firstname>Nathan</firstname>
+			<lastname>Bryant</lastname>
+			<datetime_entry>2009-07-22 04:49:39</datetime_entry>
+			<dest_country>AU</dest_country>
+		</data>
+		<data>
+			<mobile>61416390281</mobile>
+			<firstname>Alex</firstname>
+			<lastname>Macpherson</lastname>
+			<datetime_entry>2009-07-28 01:12:00</datetime_entry>
+			<dest_country>AU</dest_country>
+		</data>
+		<data>
+			<mobile>61439410654</mobile>
+			<firstname>Brad</firstname>
+			<lastname>Down</lastname>
+			<datetime_entry>2009-07-28 00:56:08</datetime_entry>
+			<dest_country>AU</dest_country>
+		</data>
+	</dataset>
+</xml>

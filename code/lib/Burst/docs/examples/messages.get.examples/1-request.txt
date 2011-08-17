@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<beam>
+	<version>0.1</version>
+	<key>YOUR ACCOUNT API KEY HERE</key>
+	<secret></secret>
+	<method>messages.get</method>
+	<params>
+		<offset>0</offset>
+		<limit>3</limit>
+	</params>
+</beam>

@@ -1,0 +1,59 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.get</method>
+	<total>11</total>
+	<time>2009-07-28 01:08:46 GMT</time>
+	<timestamp>1248743326 GMT</timestamp>
+	<dataset>
+		<data>
+			<id>176</id>
+			<name>a list</name>
+			<recipient_count>0</recipient_count>
+		</data>
+		<data>
+			<id>177</id>
+			<name>a proper list name</name>
+			<recipient_count>0</recipient_count>
+		</data>
+		<data>
+			<id>175</id>
+			<name>b list</name>
+			<recipient_count>2</recipient_count>
+		</data>
+		<data>
+			<id>174</id>
+			<name>c list</name>
+			<recipient_count>1</recipient_count>
+		</data>
+		<data>
+			<id>173</id>
+			<name>d list</name>
+			<recipient_count>0</recipient_count>
+		</data>
+		<data>
+			<id>170</id>
+			<name>e list</name>
+			<recipient_count>0</recipient_count>
+		</data>
+		<data>
+			<id>171</id>
+			<name>f list</name>
+			<recipient_count>0</recipient_count>
+		</data>
+		<data>
+			<id>153</id>
+			<name>new list</name>
+			<recipient_count>0</recipient_count>
+		</data>
+		<data>
+			<id>154</id>
+			<name>qwdqwd</name>
+			<recipient_count>1</recipient_count>
+		</data>
+		<data>
+			<id>165</id>
+			<name>untitled list</name>
+			<recipient_count>0</recipient_count>
+		</data>
+	</dataset>
+</xml>

@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<beam>
+	<version>0.1</version>
+	<key>YOUR ACCOUNT API KEY HERE</key>
+	<secret></secret>
+	<method>messages.add</method>
+	<params>
+		<list_id>175</list_id>
+		<message>This is a message being added to one of my lists</message>
+		<caller_id>Nate</caller_id>
+		<optout />
+		<sendtime />
+	</params>
+</beam>

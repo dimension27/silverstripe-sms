@@ -1,0 +1,42 @@
+<?xml version='1.0'?>
+<xml>
+	<method>messages.get</method>
+	<total>9</total>
+	<time>2009-07-28 01:14:15 GMT</time>
+	<timestamp>1248743655 GMT</timestamp>
+	<dataset>
+		<data>
+			<id>1326</id>
+			<list_id>154</list_id>
+			<mobile_from>Nate</mobile_from>
+			<message>Testing scheduling form</message>
+			<datetime_send>2009-09-20 07:40:00</datetime_send>
+			<datetime_actioned>0000-00-00 00:00:00</datetime_actioned>
+			<recipient_count>0</recipient_count>
+			<status>queued</status>
+			<schedule>Yes</schedule>
+		</data>
+		<data>
+			<id>1341</id>
+			<list_id>175</list_id>
+			<mobile_from>Nate</mobile_from>
+			<message>This is my message</message>
+			<datetime_send>2009-07-28 01:00:55</datetime_send>
+			<datetime_actioned>0000-00-00 00:00:00</datetime_actioned>
+			<recipient_count>0</recipient_count>
+			<status>queued</status>
+			<schedule>No</schedule>
+		</data>
+		<data>
+			<id>1327</id>
+			<list_id>153</list_id>
+			<mobile_from>Nate</mobile_from>
+			<message>THis is the message!</message>
+			<datetime_send>2009-07-20 07:45:04</datetime_send>
+			<datetime_actioned>0000-00-00 00:00:00</datetime_actioned>
+			<recipient_count>0</recipient_count>
+			<status>queued</status>
+			<schedule>No</schedule>
+		</data>
+	</dataset>
+</xml>

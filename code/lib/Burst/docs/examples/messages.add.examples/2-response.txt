@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<xml>
+	<method>messages.add</method>
+	<total>1</total>
+	<time>2009-07-28 01:15:05 GMT</time>
+	<timestamp>1248743705 GMT</timestamp>
+	<response>NO ACCESS TO LIST</response>
+</xml>
