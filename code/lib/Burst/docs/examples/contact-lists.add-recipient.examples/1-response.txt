@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.add-recipient</method>
+	<total>1</total>
+	<time>2009-07-28 01:11:21 GMT</time>
+	<timestamp>1248743481 GMT</timestamp>
+	<response>DUPLICATE</response>
+</xml>

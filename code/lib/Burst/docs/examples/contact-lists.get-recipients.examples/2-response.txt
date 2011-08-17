@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.get-recipients</method>
+	<total>0</total>
+	<time>2009-07-28 01:10:37 GMT</time>
+	<timestamp>1248743437 GMT</timestamp>
+	<data>
+	</data>
+</xml>

@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.add</method>
+	<total>1</total>
+	<time>2009-07-28 01:09:26 GMT</time>
+	<timestamp>1248743366 GMT</timestamp>
+	<data>
+		<name>API Added List</name>
+		<recipient_count>0</recipient_count>
+		<id>180</id>
+	</data>
+</xml>

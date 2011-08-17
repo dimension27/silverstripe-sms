@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<xml>
+	<method>messages.add</method>
+	<total>1</total>
+	<time>2009-07-28 01:14:47 GMT</time>
+	<timestamp>1248743687 GMT</timestamp>
+	<data>
+		<result>queued</result>
+		<message_id>1343</message_id>
+		<list_id>175</list_id>
+		<message>This is a message being added to one of my lists</message>
+		<cost>0.22</cost>
+		<balance>53.52</balance>
+		<charge_error>None</charge_error>
+		<datetime_send>2009-07-28 01:15:47</datetime_send>
+	</data>
+</xml>

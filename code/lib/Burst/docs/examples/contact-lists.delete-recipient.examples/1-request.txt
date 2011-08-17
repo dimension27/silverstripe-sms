@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<beam>
+	<version>0.1</version>
+	<key>YOUR ACCOUNT API KEY HERE</key>
+	<secret></secret>
+	<method>contact-lists.delete-recipient</method>
+	<params>
+		<list_id>175</list_id>
+		<mobile>61406614352</mobile>
+	</params>
+</beam>

@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.delete</method>
+	<total>1</total>
+	<time>2009-07-28 01:09:46 GMT</time>
+	<timestamp>1248743386 GMT</timestamp>
+	<response>DELETED</response>
+</xml>

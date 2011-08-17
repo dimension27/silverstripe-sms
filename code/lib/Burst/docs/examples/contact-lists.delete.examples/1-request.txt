@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<beam>
+	<version>0.1</version>
+	<key>YOUR ACCOUNT API KEY HERE</key>
+	<secret></secret>
+	<method>contact-lists.delete</method>
+	<params>
+		<id>176</id>
+	</params>
+</beam>

@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<beam>
+	<version>0.1</version>
+	<key>YOUR ACCOUNT API KEY HERE</key>
+	<secret></secret>
+	<method>contact-lists.add-recipient</method>
+	<params>
+		<list_id>175</list_id>
+		<mobile>0406614352</mobile>
+		<firstname>Nathan</firstname>
+		<lastname>Bryant</lastname>
+		<mobile_dest_country>AU</mobile_dest_country>
+	</params>
+</beam>
