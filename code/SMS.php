@@ -67,7 +67,7 @@ class SMS {
 		}
 		if( $mobile = self::validate_number($mobile) ) {
 			if( self::$log_all_messages ) {
-				error_log("Not sending SMS to '$mobile': $message");
+				error_log("Not sending SMS to '$mobile' from '$caller_id': $message");
 				return true;
 			}
 			return self::$provider->send($mobile, $message, $caller_id, $sendTime, $autoAddContactListID);
