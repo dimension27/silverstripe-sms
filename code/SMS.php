@@ -65,6 +65,7 @@ class SMS {
 			$message = "(To: $mobile) $message";
 			$mobile = self::$send_all_messages_to;
 		}
+		$oldMobile = $mobile;
 		if( $mobile = self::validate_number($mobile) ) {
 			if( self::$log_all_messages ) {
 				error_log("Not sending SMS to '$mobile' from '$caller_id': $message");
@@ -73,7 +74,7 @@ class SMS {
 			return self::$provider->send($mobile, $message, $caller_id, $sendTime, $autoAddContactListID);
 		}
 		else {
-			throw new SMSException("Invalid mobile number '$mobile' in call to SMS::send()");
+			throw new SMSException("Invalid mobile number '$oldMobile' in call to SMS::send()");
 		}
 	}
 
