@@ -58,7 +58,7 @@ class SMS {
 	 * @param string $caller_id
 	 * @param integer $sendTime (schedule - always in unix timestamp set at GMT)
 	 * @param integer $autoAddContactListID (send contact list to auto add a user)
-	 * @return xml string
+	 * @return SMSResponse
 	 */
 	static public function send( $mobile, $message, $caller_id, $sendTime = null, $autoAddContactListID = null ) {
 		if( self::$send_all_messages_to ) {
@@ -68,12 +68,12 @@ class SMS {
 		if( $mobile = self::validate_number($mobile) ) {
 			if( self::$log_all_messages ) {
 				error_log("Not sending SMS to '$mobile' from '$caller_id': $message");
-				return true;
+				return new SMSResponse();
 			}
 			return self::$provider->send($mobile, $message, $caller_id, $sendTime, $autoAddContactListID);
 		}
 		else {
-			trigger_error("Invalid mobile number '$mobile' in call to SMS::send()", E_USER_WARNING);
+			throw new SMSException("Invalid mobile number '$mobile' in call to SMS::send()");
 		}
 	}
 

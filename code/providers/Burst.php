@@ -92,6 +92,19 @@ class Burst {
 	 *   </dataset>
 	 * </xml>
 	 * </code>
+	 * 
+	 * also
+	 * 
+	 * <code>
+	 * <?xml version='1.0'?>
+	 * <xml>
+	 *   <method>messages.single</method>
+	 *   <total>1</total>
+	 *   <time>2011-08-23 23:15:03 GMT</time>
+	 *   <timestamp>1314141303 GMT</timestamp>
+	 *   <response>failed - INSUFFICIENT_CREDIT</response>
+	 *</xml>
+	 * </code>
 	 *
 	 * @param string $xmlResponse
 	 * @return array
@@ -100,21 +113,33 @@ class Burst {
 	 */
 	public function parseResponse($xmlResponse) {
 
-		$response = array();
+		$response = new SMSResponse();
 
 		$doc = new DOMDocument();
 		$doc->preserveWhiteSpace = false;
 		$doc->loadXML($xmlResponse);
 		$xpath = new DOMXPath($doc);
 		
-		$response['method']    = $xpath->query('//xml/method')->item(0)->nodeValue;
-		$response['total']     = $xpath->query('//xml/total')->item(0)->nodeValue;
-		$response['time']      = $xpath->query('//xml/time')->item(0)->nodeValue;
-		$response['timestamp'] = $xpath->query('//xml/timestamp')->item(0)->nodeValue;
-		$response['result']    = $xpath->query('//xml/data/result')->item(0)->nodeValue;
-		$response['success']   = ($response['result'] == 'queued');
-		if( stripos($response['result'], 'failed') !== false ) {
-			$response['code'] = substr($response['result'], 9); // eg failed - BAD_MOBILE 
+		$response->method    = $xpath->query('//xml/method')->item(0)->nodeValue;
+		$response->total     = $xpath->query('//xml/total')->item(0)->nodeValue;
+		$response->time      = $xpath->query('//xml/time')->item(0)->nodeValue;
+		$response->timestamp = $xpath->query('//xml/timestamp')->item(0)->nodeValue;
+		$responseNodeList = $xpath->query('//xml/data/result');
+		if ($responseNodeList->length > 0) {
+			$response->result = $responseNodeList->item(0)->nodeValue;
+		}
+		else {
+			$responseNodeList = $xpath->query('//xml/response');
+			if ($responseNodeList->length > 0) {
+				$response->result  = $responseNodeList->item(0)->nodeValue;
+			}
+			else {
+				throw new SMSException('Invalid response: '.$xmlResponse);
+			}
+		}
+		$response->success = ($response->result == 'queued');
+		if( stripos($response->result, 'failed') !== false ) {
+			$response->code = substr($response->result, 9); // eg failed - BAD_MOBILE 
 		}
 		$datasetNode = $xpath->query('//xml/dataset/data');
 		
@@ -125,7 +150,7 @@ class Burst {
 					$loop[$_item->nodeName] = $_item->nodeValue;
 				}
 			}
-			$response['dataset'][] = $loop;
+			$response->dataset[] = $loop;
 		}
 		
 		$dataNode = $xpath->query('//xml/data');
@@ -137,7 +162,7 @@ class Burst {
 					$loop[$_item->nodeName] = $_item->nodeValue;
 				}
 			}
-			$response['data'] = $loop;
+			$response->data = $loop;
 			break;
 		}
 
@@ -149,23 +174,17 @@ class Burst {
 	}
 
 	/**
-	 * Add a single SMS to the system, verify successful addition with response in result "queued"
+	 * Add a single SMS to the system.
 	 * 
-	 * Requires credit in account to process
-	 *
 	 * @param integer $mobile (international format - no spaces or +)
 	 * @param string $message
 	 * @param string $caller_id
 	 * @param integer $sendTime (schedule - always in unix timestamp set at GMT)
 	 * @param integer $autoAddContactListID (send contact list to auto add a user)
-	 * @return xml string
+	 * @return SMSResponse
 	 */
 	public function send( $mobile, $message, $caller_id, $sendTime = null, $autoAddContactListID = null ) {
-		$response = $this->SMS($mobile, $message, $caller_id, $sendTime, $autoAddContactListID);
-		if(@$response['data']['result']) {
-			return $response['data']['result'];
-		}
-		return false;
+		return $this->SMS($mobile, $message, $caller_id, $sendTime, $autoAddContactListID);
 	}
 
 }
